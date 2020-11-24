@@ -231,16 +231,15 @@ export default {
       })
     },
     delByIds (ids) {
-      this.$message.error('演示环境无法操作')
-      // delProf({ ids: ids.join(',') }).then(res => {
-      //   if (res.code === 0) {
-      //     this.$message.success(`删除成功`)
-      //     this.handleOk()
-      //     this.selectedRowKeys = []
-      //   } else {
-      //     this.$message.error(res.msg)
-      //   }
-      // })
+      delProf({ ids: ids.join(',') }).then(res => {
+        if (res.code === 0) {
+          this.$message.success(`删除成功`)
+          this.handleOk()
+          this.selectedRowKeys = []
+        } else {
+          this.$message.error(res.msg)
+        }
+      })
     }
   },
   watch: {

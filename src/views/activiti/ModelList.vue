@@ -177,15 +177,14 @@ export default {
       this.handleOk()
     },
     deploy (id) {
-      this.$message.error('演示环境无法操作')
-      // deploy(id).then(res => {
-      //   if (res.code === 0) {
-      //     this.$message.success(`发布成功`)
-      //     this.handleOk()
-      //   } else {
-      //     this.$message.error(res.msg)
-      //   }
-      // })
+      deploy(id).then(res => {
+        if (res.code === 0) {
+          this.$message.success(`发布成功`)
+          this.handleOk()
+        } else {
+          this.$message.error(res.msg)
+        }
+      })
     },
     delByIds (ids) {
       delModel({ ids: ids.join(',') }).then(res => {
