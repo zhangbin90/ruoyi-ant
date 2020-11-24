@@ -72,7 +72,7 @@ export function get2step (parameter) {
 // 获取验证图片  以及token
 export function getCaptcha (data) {
   return axios({
-    url: '/auth/captcha/get',
+    url: '/captcha/get',
     method: 'post',
     data
   })
@@ -81,7 +81,7 @@ export function getCaptcha (data) {
 // 滑动或者点选验证
 export function captchaCheck (data) {
   return axios({
-    url: '/auth/captcha/check',
+    url: '/captcha/check',
     method: 'post',
     data
   })
